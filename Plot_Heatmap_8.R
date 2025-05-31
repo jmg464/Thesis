@@ -13,7 +13,7 @@ max_LEV_points <- data.frame(
 
 case <- "Beech_1"  
 
-df <- read_excel("/Users/lukashasler/Library/Mobile Documents/com~apple~CloudDocs/Documents/Uni Copenhagen/Jahr 2/Thesis/Data_final.xlsx",
+df <- read_excel(".../Data_final.xlsx",
                  sheet = "Scenario_1")
 
 param_values <- df[[case]]
@@ -139,7 +139,7 @@ p1 <- ggplot(LEV_grid_all, aes(x = T, y = psi, fill = LEV_class)) +
 
 case <- "Beech_2"  
 
-df <- read_excel("/Users/lukashasler/Library/Mobile Documents/com~apple~CloudDocs/Documents/Uni Copenhagen/Jahr 2/Thesis/Data_final.xlsx",
+df <- read_excel(".../Data_final.xlsx",
                  sheet = "Scenario_1")
 
 param_values <- df[[case]]
@@ -265,7 +265,7 @@ p2 <- ggplot(LEV_grid_all, aes(x = T, y = psi, fill = LEV_class)) +
 
 case <- "N_Spruce_1"   
 
-df <- read_excel("/Users/lukashasler/Library/Mobile Documents/com~apple~CloudDocs/Documents/Uni Copenhagen/Jahr 2/Thesis/Data_final.xlsx",
+df <- read_excel(".../Data_final.xlsx",
                  sheet = "Scenario_1")
 
 param_values <- df[[case]]
@@ -390,7 +390,7 @@ p3 <- ggplot(LEV_grid_all, aes(x = T, y = psi, fill = LEV_class)) +
 
 case <- "N_Spruce_2"  
 
-df <- read_excel("/Users/lukashasler/Library/Mobile Documents/com~apple~CloudDocs/Documents/Uni Copenhagen/Jahr 2/Thesis/Data_final.xlsx",
+df <- read_excel(".../Data_final.xlsx",
                  sheet = "Scenario_1")
 
 param_values <- df[[case]]
@@ -515,7 +515,7 @@ p4 <- ggplot(LEV_grid_all, aes(x = T, y = psi, fill = LEV_class)) +
 
 case <- "Beech_1"   # "Beech_1"   "Beech_2"   "N_Spruce_1"   "N_Spruce_2"
 
-df <- read_excel("/Users/lukashasler/Library/Mobile Documents/com~apple~CloudDocs/Documents/Uni Copenhagen/Jahr 2/Thesis/Data_final.xlsx",
+df <- read_excel(".../Data_final.xlsx",
                  sheet = "Scenario_2")
 
 param_values <- df[[case]]
@@ -641,7 +641,7 @@ p5 <- ggplot(LEV_grid_all, aes(x = T, y = psi, fill = LEV_class)) +
 
 case <- "Beech_2"   # "Beech_1"   "Beech_2"   "N_Spruce_1"   "N_Spruce_2"
 
-df <- read_excel("/Users/lukashasler/Library/Mobile Documents/com~apple~CloudDocs/Documents/Uni Copenhagen/Jahr 2/Thesis/Data_final.xlsx",
+df <- read_excel(".../Data_final.xlsx",
                  sheet = "Scenario_2")
 
 param_values <- df[[case]]
@@ -767,7 +767,7 @@ p6 <- ggplot(LEV_grid_all, aes(x = T, y = psi, fill = LEV_class)) +
 
 case <- "N_Spruce_1"   # "Beech_1"   "Beech_2"   "N_Spruce_1"   "N_Spruce_2"
 
-df <- read_excel("/Users/lukashasler/Library/Mobile Documents/com~apple~CloudDocs/Documents/Uni Copenhagen/Jahr 2/Thesis/Data_final.xlsx",
+df <- read_excel(".../Data_final.xlsx",
                  sheet = "Scenario_2")
 
 param_values <- df[[case]]
@@ -892,7 +892,7 @@ p7 <- ggplot(LEV_grid_all, aes(x = T, y = psi, fill = LEV_class)) +
 
 case <- "N_Spruce_2"   # "Beech_1"   "Beech_2"   "N_Spruce_1"   "N_Spruce_2"
 
-df <- read_excel("/Users/lukashasler/Library/Mobile Documents/com~apple~CloudDocs/Documents/Uni Copenhagen/Jahr 2/Thesis/Data_final.xlsx",
+df <- read_excel(".../Data_final.xlsx",
                  sheet = "Scenario_2")
 
 param_values <- df[[case]]
@@ -1015,7 +1015,6 @@ p8 <- ggplot(LEV_grid_all, aes(x = T, y = psi, fill = LEV_class)) +
     y = "Thinning Age (ψ)"
   ) 
 
-# Nur p1 behält die Legende, alle anderen bekommen keine
 p2 <- p2 + theme(legend.position = "none")
 p3 <- p3 + theme(legend.position = "none")
 p4 <- p4 + theme(legend.position = "none")
@@ -1024,17 +1023,13 @@ p6 <- p6 + theme(legend.position = "none")
 p7 <- p7 + theme(legend.position = "none")
 p8 <- p8 + theme(legend.position = "none")
 
-# Extrahiere Legende von p1
 legend <- get_legend(p1)
 
-# Entferne Legende aus p1
 p1 <- p1 + theme(legend.position = "none")
 
-# Erstelle das Layout
 main_plots <- (p1 | p2 | p3 | p4) /
   (p5 | p6 | p7 | p8)
 
-# Hänge die Legende rechts mittig an
 final_plot <- main_plots + plot_layout(guides = "collect") & theme(legend.position = "right")
 
 final_plot

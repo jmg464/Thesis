@@ -46,7 +46,7 @@ x <- function(VMax, g, b, t, theta, psi, T_rotation) {
 t_values <- seq(0, 200, by = 1)
 
 # Load Data ###################################################################
-df <- read_excel("/Users/lukashasler/Library/Mobile Documents/com~apple~CloudDocs/Documents/Uni Copenhagen/Jahr 2/Thesis/Data_final.xlsx",
+df <- read_excel(".../Data_final.xlsx",
                  sheet = "Scenario_1")
 
 case <- "Beech_1" # "Beech_2"   "N_Spruce_1"   "N_Spruce_2"

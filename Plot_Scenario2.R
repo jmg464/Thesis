@@ -54,7 +54,7 @@ x_prime <- Vectorize(function(VMax, g, b, t, theta, psi, T_rotation) {
   if (t < t_switch) {
     return(y_prime(VMax, g, b, t))
   } else {
-    # exakte Ableitung des Integranden (aus deinem neuen x_volume)
+
     num1 <- g * exp(-g * (t - b)) * exp(-exp(-g * (t - b)))
     den1 <- exp(-exp(-g * (t - b))) - exp(-exp(g * b))
     
@@ -136,7 +136,7 @@ PVf_up_to_t <- function(VMax, g, b, theta, psi, T_rotation, Pc, beta, Cf, r, t, 
 t_values <- seq(0, 200, by = 1)
 
 # Load Data ###################################################################
-df <- read_excel("/Users/lukashasler/Library/Mobile Documents/com~apple~CloudDocs/Documents/Uni Copenhagen/Jahr 2/Thesis/Data_final.xlsx",
+df <- read_excel(".../Data_final.xlsx",
                  sheet = "Scenario_2")
 
 case <- "Beech_1" # "Beech_1"   "Beech_2"   "N_Spruce_1"   "N_Spruce_2"

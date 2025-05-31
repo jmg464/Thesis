@@ -24,7 +24,7 @@ t_values <- seq(0, 200, by = 1)
 
 # Compute growth values
 # Load Data ###################################################################
-df <- read_excel("/Users/lukashasler/Library/Mobile Documents/com~apple~CloudDocs/Documents/Uni Copenhagen/Jahr 2/Thesis/Data_final.xlsx",
+df <- read_excel(".../Data_final.xlsx",
                  sheet = "Scenario_1")
 
 case <- "Beech_1" # "Beech_2"   "N_Spruce_1"   "N_Spruce_2"
@@ -39,7 +39,7 @@ for (i in seq_along(param_names)) {
 y_values <- sapply(t_values, function(t) y(VMax, g, b, t))
 
 # Load Data ###################################################################
-df <- read_excel("/Users/lukashasler/Library/Mobile Documents/com~apple~CloudDocs/Documents/Uni Copenhagen/Jahr 2/Thesis/Data_final.xlsx",
+df <- read_excel(".../Data_final.xlsx",
                  sheet = "Scenario_1")
 
 case <- "N_Spruce_1" # "Beech_2"   "N_Spruce_1"   "N_Spruce_2"
