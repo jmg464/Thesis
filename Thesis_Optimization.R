@@ -11,7 +11,7 @@ library(readxl)
 # Adjust Parameter Values to Species Case and Scenario #
 case <- "Beech_2"   # "Beech_1"   "Beech_2"   "N_Spruce_1"   "N_Spruce_2"
 
-df <- read_excel("/Users/lukashasler/Library/Mobile Documents/com~apple~CloudDocs/Documents/Uni Copenhagen/Jahr 2/Thesis/Data_Thesis.xlsx",  # Change to Working Directory with the Excel data sheet
+df <- read_excel(".../Data_Thesis.xlsx",  # Change to Working Directory with the Excel data sheet
                  sheet = "Scenario_2")                                          # Change the sheet to choose between scenario 1 and 2 
 
 param_values <- df[[case]]
